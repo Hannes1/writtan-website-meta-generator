@@ -26,7 +26,9 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
       const query = {
         siteName: siteName ?? 'Site Name',
         description: description ?? 'Description',
-        logo: logo ?? 'https://og.thcl.dev/images/logo.jpg',
+        logo:
+          logo ??
+          'https://res.cloudinary.com/writtan/image/upload/v1650728807/writtan-website/assets/App_Icon_ownxpt.png',
         theme: theme ?? 'dark',
         templateTitle,
         logoWidth: logoWidth ?? '100',
@@ -44,7 +46,7 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
               <div class="split">
                 <div class="left">
                   <h3 class="link">
-                    theodorusclarence.com/blog
+                    https://www.writtan.com/blog
                   </h3>
                   <h1 class="title">
                     <span class="gradient">
@@ -52,10 +54,10 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
                     </span>
                   </h1>
                   <div class="social">
-                    <img class="social_img" src="https://res.cloudinary.com/theodorusclarence/image/upload/c_fill,g_auto:face,h_1000,w_1000/v1636335597/theodorusclarence/clarence_gu3cxx.jpg">
+                    <img class="social_img" src="https://res.cloudinary.com/writtan/image/upload/c_fill,g_auto:face,h_1000,w_1000/v1650728807/writtan-website/assets/App_Icon_ownxpt.png">
                     <div class="social_info">
-                      <p class="name">Theodorus Clarence</p>
-                      <p class="twitter">@th_clarence</p>
+                      <p class="name">Writtan</p>
+                      <p class="twitter">@writtan_app</p>
                     </div>
                   </div>
                 </div>
@@ -175,7 +177,7 @@ const getStyle = (query: Record<keyof typeof QueryEnum, string | string[]>) => `
   .twitter {
     font-size: 1.3rem;
     margin-top: 0.1rem;
-    color: #F3F4F6;
+    color: ${query.theme === 'dark' ? '#F3F4F6' : '#000'};
   }
   .right img {
     height: 83vh;

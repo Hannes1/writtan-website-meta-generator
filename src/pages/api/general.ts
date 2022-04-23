@@ -24,7 +24,9 @@ export default withOGImage<'query', keyof typeof GeneralQueryEnum>({
       const query = {
         siteName: siteName ?? 'Site Name',
         description: description ?? 'Description',
-        logo: logo ?? 'https://og.thcl.dev/images/logo.jpg',
+        logo:
+          logo ??
+          'https://res.cloudinary.com/writtan/image/upload/v1650728807/writtan-website/assets/App_Icon_ownxpt.png',
         theme: theme ?? 'dark',
         templateTitle,
         logoWidth: logoWidth ?? '100',

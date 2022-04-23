@@ -25,7 +25,7 @@ export default withOGImage<'query', keyof typeof query>({
                 <img src="https://og.thcl.dev/images/logo.jpg" alt="Favicon" />
                 <div class="right">
                   <h2>${query.type} by</h2>
-                  <p class="gradient">Theodorus Clarence</p>
+                  <p class="gradient">Writtan</p>
                 </div>
               </header>
               <h1>${query.title}</h1>
