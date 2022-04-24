@@ -8,15 +8,14 @@ import Input from '@/components/forms/Input';
 import SelectInput from '@/components/forms/SelectInput';
 import Seo from '@/components/Seo';
 
+import { url } from '@/constants/constants';
 import { GeneralQueryEnum } from '@/pages/api/general';
 
 type Query = Record<keyof typeof GeneralQueryEnum | 'ogType', string>;
 
 export default function BuildPage() {
-  const [link, setLink] = React.useState('https://og.thcl.dev/api/general');
-  const [imgLink, setImgLink] = React.useState(
-    'https://og.thcl.dev/api/general'
-  );
+  const [link, setLink] = React.useState(`${url}/general`);
+  const [imgLink, setImgLink] = React.useState(`${url}/general`);
 
   //#region  //*=========== Forms ===========
   const methods = useForm<Query>({
@@ -34,7 +33,7 @@ export default function BuildPage() {
     const { ogType, ...rest } = formData;
     const qurl = queryString.stringifyUrl(
       {
-        url: `http://localhost:3000/api/${ogType}`,
+        url: `${url}/${ogType}`,
         query: { ...rest },
       },
       {
